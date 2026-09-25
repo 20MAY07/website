@@ -11,43 +11,21 @@ public class Main {
 
         server.createContext("/", exchange -> {
 
-            String html = """
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>DevOps Demo</title>
-                        <style>
-                            body {
-                                font-family: Arial;
-                                text-align: center;
-                                margin-top: 100px;
-                                background: #f2f2f2;
-                            }
-
-                            .box {
-                                background: white;
-                                padding: 40px;
-                                margin: auto;
-                                width: 400px;
-                                border-radius: 10px;
-                                box-shadow: 0 0 10px #aaa;
-                            }
-
-                            h1 {
-                                color: green;
-                            }
-                        </style>
-                    </head>
-
-                    <body>
-                        <div class="box">
-                            <h1>DevOps Website</h1>
-                            <p>Hello from Java!</p>
-                            <p>Jenkins + GitHub is working successfully.</p>
-                        </div>
-                    </body>
-                    </html>
-                    """;
+            String html =
+                    "<html>" +
+                    "<head>" +
+                    "<title>DevOps Website</title>" +
+                    "<style>" +
+                    "body { font-family: Arial; text-align: center; margin-top: 100px; }" +
+                    "h1 { color: green; }" +
+                    "</style>" +
+                    "</head>" +
+                    "<body>" +
+                    "<h1>DevOps Website</h1>" +
+                    "<p>Hello from Java!</p>" +
+                    "<p>Jenkins + GitHub is working successfully.</p>" +
+                    "</body>" +
+                    "</html>";
 
             exchange.getResponseHeaders()
                     .set("Content-Type", "text/html");
